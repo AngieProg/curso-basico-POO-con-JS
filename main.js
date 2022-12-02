@@ -87,7 +87,43 @@ const miguelita = new Student2({
 });
 
 
+//Creando objeto literal
+const juanLiteral = {
+    name: "JuanDC",
+    username: "juandc",
+    points: 100,
+    //Podemos guardar objetos dentro de objetos como es el caso de socialMedia
+    socialMedia : {
+        twitter: "fjuandc",
+        instaram: "fjuandc",
+        facebook: undefined,
+    },
+    //Guardamos esta lista en un array
+    approvedCourses: [
+        "Curso Definitivo de HTML y CSS",
+        "Curso Práctico de HTML y CSS",
+    ],
+    //Creamos un array de objetos
+    learningPaths: [
+        {
+            name: "Escuela de desarrollo Web",
+            courses: [
+                "Curso Definitivo de HTML y CSS",
+                "Curso Práctico de HTML y CSS",
+                "Curso de Responsive Design"
+            ]
+        },
+        {
+            name: "Escuela de Videojuegos",
+            courses: [
+                "Curso Introducción a la Producción de Videojuegos",
+                "Curso de Unreal Engine",
+                "Curso de Unioty 3D",
+            ]   
+        },
+    ],
 
+}
 
 
 
