@@ -51,31 +51,19 @@ const diegoDGranda = new Instructor({
     email: "DDGranda7898@gmail.com",
     yearsOfinstruction: 6,
 });
-//////////////////////////////ENCAPSUALMIENTO DE LOS ARCHIVOS VIDEO
-function videoPlay(id){
-    const urlSecreta = "https://platziultrasecretomasquelanasa.com/" + id;
-    console.log("Se esta produciendo desde la url " + urlSecreta);
-}
-
-function videoStop(id){
-    const urlSecreta = "https://platziultrasecretomasquelanasa.com/" + id;
-    console.log("Pausamos la url " + urlSecreta);
-}
 
 
 ///////////////////////////////DEFICION DE CLASE "CLASE"
-export class PlatziClass{
+class PlatziClass{
     constructor({
         name,
         instructor,
         level,
-        videoID,
     }){
         this.name = name;
         this.instructor = instructor;
         this._level = level;
-        this.videoID = videoID;
-    }
+    } 
     get level(){
         return this._level;
     }
@@ -84,13 +72,6 @@ export class PlatziClass{
         this._level = nuevoNombre;
     }
 
-    reproducir(){
-        videoPlay(this.videoID);
-    }
-
-    pausar(){
-        videoStop(this.videoID);
-    }
 };
 
 /*Comandos para verificar que el encapsulamiento fue correcto: 
@@ -255,4 +236,36 @@ const Miguelito = new Student({
         escuelaDataScience,
     ]
 });
+
+class Course2 {
+    constructor({
+      name,
+      classes = [],
+    }) {
+      this._name = name;
+      this.classes = classes;
+    }
+  
+    get name() {
+      return this._name;
+    }
+  
+    set name(nuevoNombrecito) {
+        if(typeof nuevoNombrecito !== "string"){
+            console.error ("El nombre tiene que ser un string");
+        }else{
+            const Mayuscula = nuevoNombrecito[0].toUpperCase() + nuevoNombrecito.slice(1);
+            this._name = Mayuscula;
+        }
+    }
+  }
+
+  const cursoPrueba = new Course2({
+    name: "curso de prueba con mayusculas",
+    classes: [
+        "Matemáticas",
+        "Física",
+        "INgles",
+    ]
+  })
 
